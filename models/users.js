@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema(
       required: true,
       min: 3,
       max: 20,
-      unique:Boolean,
+      unique: Boolean,
     },
     email: {
       type: String,
@@ -19,9 +19,19 @@ const userSchema = new mongoose.Schema(
       required: true,
       min: 6,
     },
+    followers:{
+      type:Array,
+    },
+    followings:{
+      type:Array,
+    },
     isAdmin: {
       type: Boolean,
       default: false,
+    },
+    desc: {
+      type: String,
+      max: 50,
     },
   },
   { timestamps: true }
